@@ -1,0 +1,15 @@
+[Unit]
+Description=Jenkins Swarm Client
+After=network.target
+
+[Service]
+ExecStart=/usr/bin/java -jar /opt/swarm-client/swarm-client.jar \
+  -master http://{{ jenkins_master_url }} \
+  -name "{{ inventory_hostname }}" \
+  -executors 1 \
+  -labels "worker"
+Restart=always
+User={{ swarm_user }}  # Replace with appropriate user variable
+
+[Install]
+WantedBy=multi-user.target

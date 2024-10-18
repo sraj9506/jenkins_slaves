@@ -1,0 +1,7 @@
+# requirements.yml
+- src: git+ssh://git@github.com/sraj9506/devops_first.git
+  version: main
+  name: prerequisites
+- src: git+ssh://git@github.com/sraj9506/devops_first.git
+  version: main
+  name: docker
